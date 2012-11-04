@@ -1,0 +1,18 @@
+p#notice= notice
+
+p
+  h1 Extension Name: #{@extension.name}
+
+.span8
+  table border=1
+    caption Extension Dependency
+    thead
+      tr
+        th Extension
+        th
+    tbody
+      - @extensions.each do |extension|
+        tr
+          td= extension.name
+          td= link_to "Add Depedency"
+  

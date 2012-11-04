@@ -14,7 +14,7 @@ class ExtensionsController < ApplicationController
   # GET /extensions/1.json
   def show
     @extension = Extension.find(params[:id])
-
+    @extensions = Extension.where('id != ?',@extension.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @extension }
