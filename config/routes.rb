@@ -1,4 +1,6 @@
 Automation::Application.routes.draw do
+  resources :extensions
+
   authenticated :user do
     root :to => 'home#index'
   end

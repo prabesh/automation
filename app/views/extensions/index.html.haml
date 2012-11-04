@@ -1,0 +1,19 @@
+%h1 Listing extensions
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @extensions.each do |extension|
+    %tr
+      %td= extension.name
+      %td= link_to 'Show', extension
+      %td= link_to 'Edit', edit_extension_path(extension)
+      %td= link_to 'Destroy', extension, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Extension', new_extension_path
