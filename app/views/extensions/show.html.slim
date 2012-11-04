@@ -2,7 +2,13 @@ p#notice= notice
 
 p
   h1 Extension Name: #{@extension.name}
+p
+  h1 Dependents
 
+ul
+  - @extension.dependencies.each do |dependency|
+    li= dependency.dependent.name 
+    = link_to "remove", dependency, :method => :delete
 .span8
   table border=1
     caption Extension Dependency
@@ -14,5 +20,5 @@ p
       - @extensions.each do |extension|
         tr
           td= extension.name
-          td= link_to "Add Depedency"
+          td= link_to "Add Depedency", dependencies_path(:dependent_id => extension), :method => :post
   

@@ -1,4 +1,6 @@
 Automation::Application.routes.draw do
+  resources :dependencies
+
   resources :extensions
 
   authenticated :user do
